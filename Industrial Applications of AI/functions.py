@@ -58,3 +58,16 @@ def evaluator(y_true, y_pred):
     print("Mean Squared Error:", mse)
     print("Mean Absolute Error:", mae)
     print("R-squared:", r2)
+
+# results comparison
+def plot_model_vs_true(results, num_samples=100):
+    for column in results.columns[1:]:
+        plt.figure(figsize=(12, 8))
+        plt.plot(range(num_samples), results['True Values'][:num_samples], label="True Values", color='darkblue', marker='o')
+        plt.plot(range(num_samples), results[column][:num_samples], label=f"{column} Predictions", color='lightblue', marker='o')
+        plt.title(f"{column} Predictions vs True Values")
+        plt.xlabel("Observation No")
+        plt.ylabel("Values")
+        plt.legend()
+        plt.grid(True)  
+        plt.show()
