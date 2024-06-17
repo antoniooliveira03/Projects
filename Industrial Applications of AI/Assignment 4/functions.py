@@ -1,7 +1,14 @@
 ### Libraries ###
 
-# language detection
+# Outliers Visualisation
+import matplotlib as plt
+import seaborn as sns
+
+# Language detection
 from langdetect import detect
+
+# Text Translation
+import requests
 
 # text preprocessing
 import nltk
@@ -16,8 +23,40 @@ from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.stem import WordNetLemmatizer, PorterStemmer
 stop_words = set(stopwords.words('english'))
 
-## Language Detection
+## Outliers Visualisation
+def plot_boxplots(data, columns_to_check, palette=None):
+    for column in columns_to_check:
+        plt.figure(figsize=(6, 4))  
+        sns.boxplot(data=data[column], palette=palette)
+        plt.title(f'Box Plot of {column}')
+        plt.xticks(rotation=45)
+        plt.show()
 
+
+## Outliers Detection
+def detect_outliers_per_column(data, columns_to_check):
+    outlier_info = {}
+    
+    for column in columns_to_check:
+        Q1 = data[column].quantile(0.25)
+        Q3 = data[column].quantile(0.75)
+        IQR = Q3 - Q1
+        
+        lower_bound = Q1 - 1.5 * IQR
+        upper_bound = Q3 + 1.5 * IQR
+        
+        outliers = data[(data[column] < lower_bound) | (data[column] > upper_bound)]
+        
+        outlier_info[column] = {
+            'Q1': Q1,
+            'Q3': Q3,
+            'outlier_count': len(outliers) 
+        }
+    
+    return outlier_info
+
+
+## Language Detection
 def detect_language(text):
     try:
         lang = detect(text)
@@ -25,8 +64,26 @@ def detect_language(text):
         lang = 'unknown'  
     return lang
 
-## Text Preprocessing 
 
+## Text Translation
+def translate_with_deepl(text, auth_key, source_lang, target_lang):
+    url = "https://api-free.deepl.com/v2/translate"
+    params = {
+        "auth_key": auth_key,
+        "text": text,
+        "source_lang": source_lang,
+        "target_lang": target_lang
+    }
+    response = requests.post(url, data=params)
+    if response.status_code == 200:
+        translation = response.json()["translations"][0]["text"]
+        return translation
+    else:
+        print(f"Translation failed with status code {response.status_code}")
+        return None
+
+
+## Text Preprocessing 
 def stopword_remover(tokenized_comment, stop_words):
     clean_text = []
     for token in tokenized_comment:
