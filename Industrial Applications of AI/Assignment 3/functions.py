@@ -11,9 +11,9 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 def plot_boxplots(data, columns_to_check, palette=None):
     for column in columns_to_check:
         plt.figure(figsize=(6, 4))  
-        sns.boxplot(data=data[column], palette=palette)
+        sns.boxplot(x=data[column], palette=palette) 
         plt.title(f'Box Plot of {column}')
-        plt.xticks()
+        plt.xticks(rotation=45) 
         plt.show()
 
 # distance between 2 points
