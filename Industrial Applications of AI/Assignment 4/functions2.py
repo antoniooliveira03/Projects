@@ -27,9 +27,9 @@ stop_words = set(stopwords.words('english'))
 def plot_boxplots(data, columns_to_check, palette=None):
     for column in columns_to_check:
         plt.figure(figsize=(6, 4))  
-        sns.boxplot(data=data[column], palette=palette)
+        sns.boxplot(x=data[column], palette=palette) 
         plt.title(f'Box Plot of {column}')
-        plt.xticks(rotation=45)
+        plt.xticks(rotation=45) 
         plt.show()
 
 
@@ -41,7 +41,6 @@ def detect_outliers_per_column(data, columns_to_check):
         Q1 = data[column].quantile(0.25)
         Q3 = data[column].quantile(0.75)
         IQR = Q3 - Q1
-        
         lower_bound = Q1 - 1.5 * IQR
         upper_bound = Q3 + 1.5 * IQR
         
@@ -50,6 +49,8 @@ def detect_outliers_per_column(data, columns_to_check):
         outlier_info[column] = {
             'Q1': Q1,
             'Q3': Q3,
+            'lower_bound': lower_bound,
+            'upper_bound': upper_bound,
             'outlier_count': len(outliers) 
         }
     
