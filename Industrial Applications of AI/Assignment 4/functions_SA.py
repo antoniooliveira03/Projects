@@ -66,5 +66,5 @@ def get_sentiment_score(word, pos_tag):
     except KeyError:
         return 0
     
-
+## AFINN
 afinn = Afinn()
