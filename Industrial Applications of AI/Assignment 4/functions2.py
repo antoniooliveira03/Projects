@@ -68,6 +68,11 @@ def detect_language(text):
 
 ## Text Translation
 def translate_with_deepl(text, auth_key, source_lang, target_lang):
+    detected_lang = detect_language(text)
+    if detected_lang.lower() == target_lang.lower():
+        print('Skipped')
+        return text  # Text is already in the target language
+    
     url = "https://api-free.deepl.com/v2/translate"
     params = {
         "auth_key": auth_key,
@@ -78,10 +83,12 @@ def translate_with_deepl(text, auth_key, source_lang, target_lang):
     response = requests.post(url, data=params)
     if response.status_code == 200:
         translation = response.json()["translations"][0]["text"]
+        print('Translated')
         return translation
     else:
         print(f"Translation failed with status code {response.status_code}")
         return None
+
 
 
 ## Text Preprocessing 
