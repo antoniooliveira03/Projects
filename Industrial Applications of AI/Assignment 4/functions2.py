@@ -1,5 +1,7 @@
 ### Libraries ###
 
+import pandas as pd
+
 # Outliers Visualisation
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -9,6 +11,10 @@ from langdetect import detect
 
 # Text Translation
 import requests
+
+# Emoji Detection
+import unicodedata
+import emoji
 
 # text preprocessing
 import nltk
@@ -89,6 +95,25 @@ def translate_with_deepl(text, auth_key, source_lang, target_lang):
         print(f"Translation failed with status code {response.status_code}")
         return None
 
+## Emoji Detection
+def is_emoji(character):
+    return character in emoji.EMOJI_DATA
+
+def contains_emoji(text):
+    return any(is_emoji(char) for char in text)
+
+
+## Emoji Replacement
+def replace_emojis(text):
+    result = []
+    for char in text:
+        if is_emoji(char):
+            description = emoji.demojize(char)
+            print(f"Replacing {char} with {description}")
+            result.append(description[1:-1])  # Remove surrounding colons from emoji name
+        else:
+            result.append(char)
+    return ''.join(result)
 
 
 ## Text Preprocessing 
