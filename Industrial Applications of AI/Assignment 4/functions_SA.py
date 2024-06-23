@@ -13,6 +13,8 @@ from nltk.corpus import sentiwordnet as swn
 # Afinn
 from afinn import Afinn
 
+# Visualisations
+import matplotlib.pyplot as plt
 
 ##########
 
@@ -68,3 +70,16 @@ def get_sentiment_score(word, pos_tag):
     
 ## AFINN
 afinn = Afinn()
+
+## Visualisations
+def histogram(data):
+    plt.hist(data, bins=22, color='indianred', ec='indianred', alpha=0.7, label='Data Points')  # Adjust the number of bins
+    plt.title('Histogram')
+    plt.xlabel('Values')
+    plt.ylabel('Frequency')
+    plt.legend()
+
+    # Set x-axis limits to include a larger range
+    plt.xlim(min(data), max(data)) 
+
+    plt.show()
