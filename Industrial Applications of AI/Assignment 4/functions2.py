@@ -29,6 +29,11 @@ from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.stem import WordNetLemmatizer, PorterStemmer
 stop_words = set(stopwords.words('english'))
 
+# Doc2Vec
+from gensim.models.doc2vec import Doc2Vec,TaggedDocument
+import ast
+
+
 ## Outliers Visualisation
 def plot_boxplots(data, columns_to_check, palette=None):
     for column in columns_to_check:
@@ -171,3 +176,14 @@ def preprocessor(reviews,
     
     return clean_text
 
+## Doc2Vec Function
+def read_corpus(column, tokens_only=False):
+    for i, tokens in enumerate(column):
+        try:
+            tokens = ast.literal_eval(tokens)
+        except:
+            tokens = tokens
+        if tokens_only:
+            yield tokens
+        else:
+            yield TaggedDocument(tokens, [i])
