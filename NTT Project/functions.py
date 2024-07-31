@@ -32,17 +32,21 @@ def graphs(data, graph, color='orange'):
                     plt.title(f'Histogram of {column}')
                     plt.show()
 
+
 def serialize_list(lst):
     """ serealize list to keep data types after export"""
     return json.dumps(lst)
+
 
 def deserialize_list(json_str):
     """ deserealize list to keep data types after import"""
     return json.loads(json_str)
 
+
 def find_non_numeric_values(lst):
     non_numeric_values = [item for item in lst if not isinstance(item, (int, float))]
     return non_numeric_values
+
 
 def create_department_dict(row):
     # Initialize an empty dictionary
@@ -54,8 +58,10 @@ def create_department_dict(row):
         dept_dict[dept_name] = row[col]
     return dept_dict
 
+
 def unique_words(words_list):
     return list(set(words_list))
+
 
 def visualize_dimensionality_reduction(transformation, targets):
     """
@@ -79,6 +85,7 @@ def visualize_dimensionality_reduction(transformation, targets):
     plt.legend(handles=handles, title='Clusters')
 
     plt.show()
+
 
 def plot_dendrogram(model, **kwargs):
     '''
@@ -107,6 +114,7 @@ def plot_dendrogram(model, **kwargs):
 
     # Plot the corresponding dendrogram
     dendrogram(linkage_matrix, **kwargs)
+
 
 def product_rules(cluster):
     """
