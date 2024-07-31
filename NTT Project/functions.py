@@ -48,18 +48,6 @@ def find_non_numeric_values(lst):
     return non_numeric_values
 
 
-def create_department_dict(row, clients_cleaned):
-    quantity_columns = [col for col in clients_cleaned.columns if '_quantity' in col]
-    # Initialize an empty dictionary
-    dept_dict = {}
-    # Iterate over each column that contains '_quantity'
-    for col in quantity_columns:
-        # Extract the department name by removing '_quantity' and add it to the dictionary
-        dept_name = col.replace('_quantity', '')
-        dept_dict[dept_name] = row[col]
-    return dept_dict
-
-
 def unique_words(words_list):
     return list(set(words_list))
 
