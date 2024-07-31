@@ -108,7 +108,7 @@ def plot_dendrogram(model, **kwargs):
     # Plot the corresponding dendrogram
     dendrogram(linkage_matrix, **kwargs)
 
-    def product_rules(cluster):
+def product_rules(cluster):
     """
     Extracts frequent itemsets and association rules from a cluster of products.
 
