@@ -49,6 +49,7 @@ def find_non_numeric_values(lst):
 
 
 def create_department_dict(row):
+    quantity_columns = [col for col in clients_cleaned.columns if '_quantity' in col]
     # Initialize an empty dictionary
     dept_dict = {}
     # Iterate over each column that contains '_quantity'
