@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 from scipy.cluster.hierarchy import dendrogram, linkage
 import json
 import ast
@@ -143,7 +144,7 @@ def product_rules(cluster):
     display(rules_grocery_iter.sort_values(by='lift', ascending=False).head(10))
 
 
-def category_rules(cluster,categories):
+def category_rules(cluster,prod):
     
     """
     Extracts frequent itemsets and association rules from a cluster of products.
