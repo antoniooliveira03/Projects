@@ -52,6 +52,11 @@ def find_non_numeric_values(lst):
 def unique_words(words_list):
     return list(set(words_list))
 
+def count_unique_departments(department_list):
+    if isinstance(department_list, list):  
+        return len(set(department_list))  
+    return 0
+
 
 def visualize_dimensionality_reduction(transformation, targets):
     """
