@@ -149,7 +149,10 @@ def product_rules(cluster):
     display(rules_grocery_iter.sort_values(by='lift', ascending=False).head(10))
 
 
-def category_rules(cluster,prod):
+from mlxtend.preprocessing import TransactionEncoder
+from mlxtend.frequent_patterns import association_rules, apriori
+
+def category_rules(cluster,prod, column):
     
     """
     Extracts frequent itemsets and association rules from a cluster of products.
@@ -176,7 +179,7 @@ def category_rules(cluster,prod):
         category_list = []
         for item in sublist:
             # Find category for the product ID
-            category = prod.loc[prod['product_id'] == item, 'department']
+            category = prod.loc[prod['product_id'] == item, f'{column}']
             if not category.empty:
                 category_list.append(category.values[0])
             # If no category is found, skip the item
