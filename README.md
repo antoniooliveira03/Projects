@@ -4,7 +4,7 @@ Dear Reader,
 
 This is the Repository of António Oliveira. Here I display the projects I already worked on, on which I apply Machine Learning, Deep Learning and Text Mining Methods.
 
-A brief description of each project follows. For more details the report of some projects is also accessible.
+A brief description of each project follows. For more details the report of some projects is also available.
 
 **Machine Learning I**
 
