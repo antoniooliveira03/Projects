@@ -1,4 +1,4 @@
-**Projects**
+# Projects
 
 Dear Reader,
 
@@ -24,7 +24,9 @@ In this project we were given a dataset which included songs from various genres
 
 **Industrial Applications of AI**
 
-This folder contains two projects that I was given the liberty to choose, being only restricted by two different themes. The first one consists of an exploration on how AI influences Supply Chain Management, where I chose to predict the delivery time of food. I retrieved a dataset from Kaggle, and performed EDA and predictions tasks, achieving satisfatory results.
+This folder contains two projects that I was given the liberty to choose, being only restricted by two different themes. The first one 
+(Assingment 3) consists of an exploration on how AI influences Supply Chain Management, where I chose to predict the delivery time of food. I retrieved a dataset from Kaggle, and performed EDA and predictions tasks, achieving satisfatory results.
+The second one (Assignment 4)
 
 **Web Mining**
 
