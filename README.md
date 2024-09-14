@@ -2,7 +2,7 @@
 
 Dear Reader,
 
-This is the Repository of António Oliveira. Here I display the projects I already worked on, on which I apply Machine Learning, Deep Learning and Text Mining Methods
+This is the Repository of António Oliveira. Here I display the projects I already worked on, on which I apply Machine Learning, Deep Learning and Text Mining Methods.
 
 A brief description of each project follows. For more details the report of each project is also accessible.
 
@@ -22,6 +22,15 @@ In this project we were given images of people with cancer. Our goal was to prep
 
 In this project we were given a dataset which included songs from various genres. We had 2 goals: predict the genre of the songs and then perform Sentiment Analysis. Consequently, this project is divided into 3 notebooks and an external py file. The first notebook is where EDA is performed, along with the required preprocessing for the data to be used in the following notebooks. The second notebook is where we import the preprocessed data and make predictions. In the third notebook Sentiment Analysis is performed by using lexicon-based algorithms. At the end, the performance of these algorithms is compared and conclusions are taken. Again, the py file named functions consists of functions used through the three notebooks, keeping the notebooks cleaner and easier to read.
 
-**Currently**
+**Industrial Applications of AI**
 
-Currently I am developing two different projects, while on Erasmus in the University of Mannheim, Germany. The first one consists on performing Sentiment Analysis on airline reviews by employing Machine Learning, Deep Learning and Lexicon-Based Methods. With the ML and DL models we aim to predict the Overall Rating given by the airline's clients given their review. With the Lexicon-based ones we aim to explore if the ratings present in our dataset match the sentiment transmited by the written reviews. In the second project, I was given the task to explore how AI influences Supply Chain Management, having chosen to predict the delivery time of food. I retrieved a dataset from Kaggle, and I am currently performing EDA and Training models, which will be used to make predictions.
+This folder contains two projects that I was given the liberty to choose, being only restricted by two different themes. The first one consists of an exploration on how AI influences Supply Chain Management, where I chose to predict the delivery time of food. I retrieved a dataset from Kaggle, and performed EDA and predictions tasks, achieving satisfatory results.
+
+**Web Mining**
+
+This project consists on performing Sentiment Analysis on airline reviews by employing Machine Learning, Deep Learning and Lexicon-Based Methods. With the ML and DL models we aim to predict the Overall Rating given by the airline's clients given their review. Pre-trained models such as BERT were used, as well as the fine-tuning of the base architecture of LSTM.
+
+**NTT Project**
+
+This project was developed during my Summer Internship at NTT Data. It was developed based on The Complete Journey Dataset, available on Kaggle. It consisted of three different steps: Data Engineering, performed in Databricks and VS Code; Data Science, performed in VS Code and available in this repository; and Data Visualisation, done in Power BI. The available section consists of using the previously developed Gold Layer, and making the necessary adjustments to the data. After doing so, EDA, Clustering and Association Rules tasks were performed, aiming to group Customers and understand their underlying purchasing habits. 
+
