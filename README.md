@@ -4,7 +4,7 @@ Dear Reader,
 
 This is the Repository of António Oliveira. Here I display the projects I already worked on, on which I apply Machine Learning, Deep Learning and Text Mining Methods.
 
-A brief description of each project follows. For more details the report of each project is also accessible.
+A brief description of each project follows. For more details the report of some projects is also accessible.
 
 **Machine Learning I**
 
@@ -25,12 +25,12 @@ In this project we were given a dataset which included songs from various genres
 **Industrial Applications of AI**
 
 This folder contains two projects that I was given the liberty to choose, being only restricted by two different themes. The first one 
-(Assingment 3) consists of an exploration on how AI influences Supply Chain Management, where I chose to predict the delivery time of food. I retrieved a dataset from Kaggle, and performed EDA and predictions tasks, achieving satisfatory results.
-The second one (Assignment 4)
+(Assingment 3) consists of an exploration on how AI influences Supply Chain Management, where I chose to predict the delivery time of food. I retrieved a dataset from Kaggle, and performed EDA and predictions tasks, achieving satisfatory results. A py file with functions used accross the notebook was also created.
+The second one (Assignment 4) consists of AI applications to the Education field, where I chose to evaluate the sentiment transmited by reviewers of the Harvard University. Since I felt this initial task did not yield satisfatory results, I added another task that consisted of predicting the rating given by said reviewers. Two external py files were also created and developed for each task.
 
 **Web Mining**
 
-This project consists on performing Sentiment Analysis on airline reviews by employing Machine Learning, Deep Learning and Lexicon-Based Methods. With the ML and DL models we aim to predict the Overall Rating given by the airline's clients given their review. Pre-trained models such as BERT were used, as well as the fine-tuning of the base architecture of LSTM.
+This project consists on performing Sentiment Analysis on airline reviews by employing Machine Learning, Deep Learning and Lexicon-Based Methods. With the ML and DL models we aim to predict the Overall Rating given by the airline's clients given their review. Pre-trained models such as BERT were used, as well as the fine-tuning of the base architecture of LSTM. External py files were also used in order to keep the notebooks cleaner.
 
 **NTT Project**
 
